@@ -9,7 +9,8 @@ export function valida(input){//reemplaza a llamar al input con el id
         input.parentElement.querySelector(".input-message-error").innerHTML = "";
     } else{
         input.parentElement.classList.add("input-container--invalid");//si es false la grega
-        input.parentElement.querySelector(".input-message-error").innerHTML =  mostrarMensajeDeError(tipoDeInput, input);
+        input.parentElement.querySelector(".input-message-error").innerHTML =
+      mostrarMensajeDeError(tipoDeInput, input);
     }
 }
 //Esta función valida vive aquí en validaciones, va a recibir el input, va a verificar cuál es el tipo de input a través de dataset.tipo ..... y a partir de ahí lo que vamos a tener que ir armando, pues bueno, es aquí todo un objeto con los diferentes tipos de input que vamos a tener.
@@ -37,6 +38,22 @@ const mensajesDeError = {
       valueMissing: "Este campo no puede estar vacío",
       customError: "Debes tener al menos 18 años de edad",
     },
+    numero: {
+      valueMissing: "El campo no puede estar vacío",
+      patternMismatch:"El formato requerido es XXXXXXXXXX 10 números",
+    },
+    direccion: {
+        valueMissing: "Este campo no puede estar vacío",
+        patternMismatch: "La dirección debe contener entre 10 a 40 caracteres.",
+      },
+      ciudad: {
+        valueMissing: "Este campo no puede estar vacío",
+        patternMismatch: "La ciudad debe contener entre 10 a 40 caracteres.",
+      },
+      estado: {
+        valueMissing: "Este campo no puede estar vacío",
+        patternMismatch: "El estado debe contener entre 10 a 40 caracteres.",
+      },
   };
 
 const validadores = {//nombre del tipo con la llave dentro del sujeto  
